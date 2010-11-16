@@ -1,0 +1,22 @@
+# Sample gitconfig
+#
+
+[user]
+        name = Andy Holman
+        email = andy@conspyre.com
+[alias]
+        co = checkout
+        count   = !git shortlog -sn
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+[core]
+        excludesfile = ~/.gitignore
+        editor = mate -w
+[apply]
+        whitespace = nowarn
+[github]
+        user = zenom_
+[format]
+	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset

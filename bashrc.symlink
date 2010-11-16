@@ -1,0 +1,48 @@
+#echo "loading .bashrc"
+#source ~/.profile
+
+# shortcut to this dotfiles path is $ZSH
+export BASH=$HOME/.dotfiles
+
+# Bash customisations to be syncronised between machines.
+export PS1='\[\e[1;34m\][\u@\h \W]\$\[\e[0m\] '
+export EDITOR="mate -w"
+
+# History
+export HISTCONTROL=erasedups	# when adding an item to history, delete itentical commands upstream
+export HISTSIZE=10000		# save 10000 items in history
+shopt -s histappend		# append history to ~\.bash_history when exiting shell
+
+# Lazy aliases
+alias l='ls -l'
+alias la='ls -Al'
+alias ..='cd ..'
+
+# Reload .bashrc
+alias refresh='. ~/.bashrc'
+
+# Pipe my public key to my clipboard. Fuck you, pay me.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# source every .zsh file in this rep
+CONFIG_FILES="$BASH/**/*.bash"
+for config_file in $CONFIG_FILES
+do
+  source $config_file
+done
+
+
+# Completion -------------------------------------------------------
+bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
+bind "set show-all-if-ambiguous On" # show list automatically, without double tab
+bind "set bell-style none" # no bell
+
+# Turn on advanced bash completion if the file exists 
+# on OSX: brew install bash-completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
+
+# unset
+unset config_file
