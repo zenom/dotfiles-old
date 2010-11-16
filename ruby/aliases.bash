@@ -1,8 +1,8 @@
 alias r='rvm use ree-1.8.7-head'
 
 alias rc='rails console'
-#alias rs='rails server -p `available_rails_port`'
-alias rs='rails server'
+alias rs='rails server -p `available_rails_port`'
+#alias rs='rails server'
 alias rg='rails generate'
 alias rd='rails destroy'
 alias ts='rails server thin'
