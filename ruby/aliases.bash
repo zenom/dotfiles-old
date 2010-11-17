@@ -1,3 +1,4 @@
+#!/bin/bash
 alias r='rvm use ree-1.8.7-head'
 
 alias rc='rails console'

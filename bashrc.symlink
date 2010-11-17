@@ -1,3 +1,4 @@
+#!/bin/bash
 # load up the project directories
 if [ -f ~/.projects ]; then
   source ~/.projects;
