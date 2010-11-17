@@ -12,6 +12,7 @@ alias c='cd '
 alias dev='cd /Volumes/Development'
 alias docs='cd ~/Documents'
 alias downloads='cd ~/Downloads'
+alias github="open -a chromium http://www.github.com"
 
 if [ -s /usr/bin/firefox ] ; then
   unalias firefox
