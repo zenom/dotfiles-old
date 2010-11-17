@@ -34,7 +34,7 @@ function commands() {
 
 
 if [ -z "${PROJECT_PARENT_DIRS[*]}" ]; then
-	echo "Define a PROJECT_PARENT_DIRS array in ~/.bash_profile"
+	echo "Define a PROJECT_PARENT_DIRS array in ~/.projects"
 fi
 
 
