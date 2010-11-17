@@ -18,5 +18,6 @@
         whitespace = nowarn
 [github]
         user = zenom_
+		token = 
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
