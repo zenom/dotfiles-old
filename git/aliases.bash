@@ -9,7 +9,7 @@ alias get='git'
 alias gst='git status'
 alias gs='git status'
 alias gss='git status -s'
-alias gl='git pull'
+alias gl='git pull --rebase --prune'
 alias gup='git fetch && git rebase'
 alias gp='git push'
 alias gpo='git push origin'
@@ -23,6 +23,7 @@ alias gcp='git cherry-pick'
 alias gco='git checkout'
 alias gexport='git archive --format zip --output'
 alias gdel='git branch -D'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 case $OSTYPE in
   linux*)
@@ -48,7 +49,7 @@ function git-help() {
   echo "  gall	  = git add ."
   echo "  gst/gs  = git status"
   echo "  gss	  = git status -s"
-  echo "  gl      = git pull"
+  echo "  gl      = git pull --rebase --prune"
   echo "  gup     = git fetch && git rebase"
   echo "  gp      = git push"
   echo "  gd      = git diff | mate"
@@ -60,6 +61,7 @@ function git-help() {
   echo "  gcount  = git shortlog -sn"
   echo "  gcp     = git cherry-pick"
   echo "  gco     = git checkout"
+  echo "  glog    = git log"
   echo "  gexport = git git archive --format zip --output"
 	echo "  gdel    = git branch -D"
 	echo "  gpo     = git push origin"
