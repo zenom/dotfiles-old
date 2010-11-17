@@ -53,3 +53,7 @@ stuff in these files were pulled from the following people:
 - [Ryan Bates (ryanb)](https://github.com/ryanb)
 - [Bryan Goines (bry4n)](https://github.com/bry4n)
 - [Mislav Marohnić (mislav)](https://github.com/mislav)
+
+Git / Rails commands from Bash-It.
+
+- [bash-it](https://github.com/revans/bash-it)

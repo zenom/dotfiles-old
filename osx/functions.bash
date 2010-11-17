@@ -9,6 +9,7 @@ function myip {
   echo "Your public IP is: ${bold_green} $res ${normal}"
 }
 
+# Edit your hosts file.
 if [ "`id -u`" -eq 0 ]; then
   alias hosts='vi /etc/hosts'
 else
@@ -31,6 +32,8 @@ function commands() {
   echo "  ssh<tab>            = will show all your hosts"
   echo "  projects            = list all your projects based on .projects file"
   echo "  reload!             = reload your shell"
+  echo "  myip                = your internet ip"
+  echo "  ips                 = ips on this machine"
   echo
 }
 
