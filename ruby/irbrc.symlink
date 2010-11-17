@@ -24,18 +24,6 @@ ANSI[:MAGENTA]   = "\e[35m"
 ANSI[:CYAN]      = "\e[36m"
 ANSI[:WHITE]     = "\e[37m"
 
-# %w[
-#   rubygems
-#   ap
-#   interactive_editor
-# ].each do |gem|
-#   begin
-#     require gem
-#   rescue LoadError
-#   end
-# end
-
-
 ARGV.concat [ "--readline",
   "--prompt-mode",
   "simple" ]

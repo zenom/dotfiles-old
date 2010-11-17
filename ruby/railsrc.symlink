@@ -1,31 +1,47 @@
 #!/usr/bin/ruby
 
-def change_log(stream)
-  ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.clear_active_connections!
-end
-
-def show_log
-  change_log(STDOUT)
-end
-
-def hide_log
-  change_log(nil)
-end
-
-unless IRB.version.include?('DietRB')
-  IRB::Irb.class_eval do
-    def output_value
-      ap @context.last_value
-    end
+# Setup logging for Rails (mostly use rails 3)
+if ENV.include?('RAILS_ENV')
+  if !Object.const_defined?('RAILS_DEFAULT_LOGGER')
+    require 'logger'
+    Object.const_set('RAILS_DEFAULT_LOGGER', Logger.new(STDOUT))
   end
-else # MacRuby
-  IRB.formatter = Class.new(IRB::Formatter) do
-    def inspect_object(object)
-      object.ai
-    end
-  end.new
+
+  def sql(query)
+    ActiveRecord::Base.connection.select_all(query)
+  end
+  
+  if ENV['RAILS_ENV'] == 'test'
+    require 'spec/spec_helper'
+  end
+
+# for rails 3
+elsif defined?(Rails) && !Rails.env.nil? && defined?(ActiveRecord)
+  if Rails.logger
+    Rails.logger =Logger.new(STDOUT)
+    ActiveRecord::Base.logger = Rails.logger
+    ActiveRecord::Base.clear_active_connections!
+  end
+  if Rails.env == 'test'
+    require 'spec/spec_helper'
+  end
+else
+  # nothing to do
 end
+
+# Spit out columns based on AR or Mongoid
+if defined?(ActiveRecord)
+  # annotate column names of an AR model
+  def show(obj)
+    y(obj.send("column_names"))
+  end
+elsif defined?(Mongoid)
+  # annotate column names of a Mongoid model
+  def show(obj)
+    y(obj.send("fields").keys)
+  end
+end
+
 
 def rvm_exists?
   `which rvm`
