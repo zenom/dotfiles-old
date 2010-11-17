@@ -18,5 +18,4 @@ function rvm_version () {
 }
 
 # setting this for rvm stuff
-ORIG_RUBY=$RUBY_VERSION;
-ORIG_GEMSET=$rvm_gemset_name
+ORIG_RUBY=$(basename $GEM_HOME)

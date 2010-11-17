@@ -1,15 +1,5 @@
 #!/bin/bash
-CHANGE=0;
-if [ $RUBY_VERSION != $ORIG_RUBY ]; then
-  ORIG_RUBY=$RUBY_VERSION;
-  CHANGE=1;
-fi
-
-if [ "$ORIG_GEMSET" != "$rvm_gemset_name" ]; then
-  ORIG_GEMSET=$rvm_gemset_name;
-  CHANGE=1;
-fi
-
-if [ $CHANGE == 1 ]; then
-  echo "You are now using: $ORIG_RUBY@$ORIG_GEMSET";
+if [ $(basename $GEM_HOME) != $ORIG_RUBY ]; then
+  ORIG_RUBY=$(basename $GEM_HOME)
+  echo "You are now using: $(basename $GEM_HOME)";
 fi
