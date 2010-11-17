@@ -8,8 +8,6 @@ fi
 export BASH=$HOME/.dotfiles
 
 # Bash customisations to be syncronised between machines.
-#export PS1='\[\e[1;34m\][\u@\h \W]\$\[\e[0m\] '
-export PS1='[\u@\h \W]\$ '
 export EDITOR="mate -w"
 
 # History
