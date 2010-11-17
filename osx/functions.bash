@@ -29,6 +29,8 @@ function commands() {
   echo "  dotcd               = cd to the .dotfiles directory"
   echo "  home                = cd to ~/"
   echo "  ssh<tab>            = will show all your hosts"
+  echo "  projects            = list all your projects based on .projects file"
+  echo "  reload!             = reload your shell"
   echo
 }
 
