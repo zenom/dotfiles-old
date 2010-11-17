@@ -23,6 +23,7 @@ which sets up a few paths that'll be different on your particular machine.
 
 ## modify dotfiles
 For easier use you can use the following commands to edit or get to your dotfiles dirs.
+
 - `dotcd` will change to your .dotfiles directory.
 - `dotmate` will open your .dotfiles directory in TextMate.
 
