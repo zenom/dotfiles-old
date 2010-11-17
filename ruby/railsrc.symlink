@@ -38,7 +38,12 @@ if defined?(ActiveRecord)
 elsif defined?(Mongoid)
   # annotate column names of a Mongoid model
   def show(obj)
-    y(obj.send("fields").keys)
+    fields = obj.send("fields").keys
+    #Source.fields["slug"].type.to_s
+    fields.each do |field|
+      puts "#{ANSI[:MAGENTA]}#{field.to_sym}#{ANSI[:RESET]} => #{ANSI[:LGRAY]}#{obj.send("fields")[field].type.to_s}#{ANSI[:RESET]}\n"
+    end
+    nil
   end
 end
 
