@@ -1,9 +1,11 @@
 #!/bin/bash
 
+# List all ips on machine.
 function ips {
   ifconfig | grep "inet " | awk '{ print $2 }'
 }
 
+# List your public ip.
 function myip {
   res=$(curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+')
   echo "Your public IP is: ${bold_green} $res ${normal}"
@@ -16,8 +18,7 @@ else
   alias hosts='sudo vi /etc/hosts'
 fi
 
-
-
+# List of all commands.
 function commands() {
   echo "Some of the commands"
   echo
@@ -47,15 +48,16 @@ function commands() {
   echo
 }
 
+
+# In ~/.projects define a PROJECT_PARENT_DIRS array and source this script. e.g.
+# Originally from: https://github.com/iain/osx_settings/blob/master/.project_aliases.sh
+#  PROJECT_PARENT_DIRS[0]="$HOME/src"
+#  PROJECT_PARENT_DIRS[1]="$HOME/work"
+
 if [ -z "${PROJECT_PARENT_DIRS[*]}" ]; then
 	echo "Define a PROJECT_PARENT_DIRS array in ~/.projects"
 fi
 
-
-# In ~/.projects define a PROJECT_PARENT_DIRS array and source this script. e.g.
-# https://github.com/iain/osx_settings/blob/master/.project_aliases.sh
-#  PROJECT_PARENT_DIRS[0]="$HOME/src"
-#  PROJECT_PARENT_DIRS[1]="$HOME/work"
 for PARENT_DIR in ${PROJECT_PARENT_DIRS[@]} ; do
   if [ -d "$PARENT_DIR" ]; then
     for PROJECT_DIR in $(/bin/ls $PARENT_DIR); do
@@ -69,8 +71,7 @@ for PARENT_DIR in ${PROJECT_PARENT_DIRS[@]} ; do
   fi
 done
 
-## loop through top level dirs in our
-## projects directories and spit them out.
+# List all the projects in the above project dirs (it just lists top levels)
 function projects() {
   for PARENT_DIR in ${PROJECT_PARENT_DIRS[@]} ; do
     if [ -d "$PARENT_DIR" ]; then

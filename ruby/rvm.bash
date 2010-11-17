@@ -1,21 +1,10 @@
 #!/bin/bash
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-switch () {
-  rvm $1
-  local v=$(rvm_version)
-  rvm wrapper $1 textmate
-  echo "Switch to Ruby version: "$v
-}
-
-rvm_default () {
-  rvm --default $1
-  rvm wrapper $1 textmate
-}
-
+# Display the ruby version.
 function rvm_version () {
   ruby --version
 }
 
-# setting this for rvm stuff
+# setting this for rvm after_cd hook
 ORIG_RUBY=$(basename $GEM_HOME)

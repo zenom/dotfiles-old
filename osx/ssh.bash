@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# show hosts from known hosts or config files
 SSH_KNOWN_HOSTS=( $(cat ~/.ssh/known_hosts | \
   cut -f 1 -d ' ' | \
   sed -e s/,.*//g | \

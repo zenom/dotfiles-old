@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# This lets you know if you enter a directory with an .rvmrc and if 
+# it changes your environment variables (ruby ver / gemset)
 if [ $(basename $GEM_HOME) != $ORIG_RUBY ]; then
   ORIG_RUBY=$(basename $GEM_HOME)
   echo "You are now using: $(basename $GEM_HOME)";

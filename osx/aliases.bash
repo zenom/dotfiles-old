@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Desktop Programs
+# Desktop Programs & Folders
 alias preview="open -a '$PREVIEW'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
@@ -30,10 +30,6 @@ fi
 alias dotmate='mate $BASH'
 alias dotcd='cd $BASH'
 alias home='cd ~/'
-
-if [ -f /etc/bash_completion ]; then
-. /etc/bash_completion
-fi
 
 # display battery info on your Mac
 # see http://blog.justingreer.com/post/45839440/a-tale-of-two-batteries

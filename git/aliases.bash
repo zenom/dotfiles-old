@@ -38,7 +38,7 @@ case $OSTYPE in
 esac
 
 
-
+# Display the help.
 function git-help() {
   echo "Git Custom Aliases Usage"
   echo

@@ -1,3 +1,4 @@
+# Awesome Print config.
 AwesomePrint.defaults = {
   :indent => -2,
   :color => {

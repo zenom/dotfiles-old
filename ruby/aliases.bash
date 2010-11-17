@@ -21,6 +21,7 @@ alias taild='tail -f log/development.log' # tail dev log
 alias s="ps aux | grep \"[r]uby\" | grep script/rails || echo \"You're not running any, dawg.\""
 
 
+# Rails help
 function rails-help() {
   echo "Usage"
   echo
