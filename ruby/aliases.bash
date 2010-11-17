@@ -10,7 +10,7 @@ alias migrate='rake db:migrate'
 alias devlog='tail -f log/development.log'
 alias taild='tail -f log/development.log' # tail dev log
 
-alias s="ps aux | grep \"[r]uby\" | grep script/server || echo \"You're not running any, dawg.\""
+alias s="ps aux | grep \"[r]uby\" | grep script/rails || echo \"You're not running any, dawg.\""
 
 
 function rails-help() {
