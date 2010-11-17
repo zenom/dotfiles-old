@@ -4,7 +4,7 @@ if [ -f ~/.projects ]; then
   source ~/.projects;
 fi
 
-# shortcut to this dotfiles path is $ZSH
+# shortcut to this dotfiles path is $BASH
 export BASH=$HOME/.dotfiles
 
 # Bash customisations to be syncronised between machines.
@@ -13,7 +13,6 @@ export EDITOR="mate -w"
 # History
 export HISTCONTROL=erasedups	# when adding an item to history, delete itentical commands upstream
 export HISTSIZE=10000		# save 10000 items in history
-shopt -s histappend		# append history to ~\.bash_history when exiting shell
 
 
 # source every .bash file in this rep
