@@ -53,3 +53,17 @@ for PARENT_DIR in ${PROJECT_PARENT_DIRS[@]} ; do
     done
   fi
 done
+
+## loop through top level dirs in our
+## projects directories and spit them out.
+function projects() {
+  for PARENT_DIR in ${PROJECT_PARENT_DIRS[@]} ; do
+    if [ -d "$PARENT_DIR" ]; then
+      for PROJECT_DIR in $(/bin/ls $PARENT_DIR); do
+        if [ -d "$PARENT_DIR/$PROJECT_DIR" ]; then
+  			  echo "$(basename $PARENT_DIR)/$PROJECT_DIR";
+  			fi
+      done
+    fi
+  done
+}
