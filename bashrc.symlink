@@ -15,16 +15,6 @@ export HISTCONTROL=erasedups	# when adding an item to history, delete itentical 
 export HISTSIZE=10000		# save 10000 items in history
 shopt -s histappend		# append history to ~\.bash_history when exiting shell
 
-# Lazy aliases
-alias l='ls -l'
-alias la='ls -Al'
-alias ..='cd ..'
-
-# Reload .bashrc
-alias refresh='. ~/.bashrc'
-
-# Pipe my public key to my clipboard.
-alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # source every .bash file in this rep
 CONFIG_FILES="$BASH/**/*.bash"

@@ -30,3 +30,15 @@ fi
 # display battery info on your Mac
 # see http://blog.justingreer.com/post/45839440/a-tale-of-two-batteries
 alias battery='ioreg -w0 -l | grep Capacity | cut -d " " -f 17-50'
+
+# Pipe my public key to my clipboard.
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+
+# Lazy aliases
+alias l='ls -l'
+alias la='ls -Al'
+alias ..='cd ..'
+
+# Reload .bashrc
+alias refresh='. ~/.bashrc'
+alias reload!='. ~/.bashrc'
