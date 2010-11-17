@@ -12,3 +12,28 @@ end
 def hide_log
   change_log(nil)
 end
+
+unless IRB.version.include?('DietRB')
+  IRB::Irb.class_eval do
+    def output_value
+      ap @context.last_value
+    end
+  end
+else # MacRuby
+  IRB.formatter = Class.new(IRB::Formatter) do
+    def inspect_object(object)
+      object.ai
+    end
+  end.new
+end
+
+def rvm_exists?
+  `which rvm`
+  $?.success?
+end
+
+if rvm_exists?
+  version = %x[rvm-prompt]
+  puts "#{ANSI[:WHITE]}~> RVM:#{ANSI[:RESET]} #{ANSI[:GREEN]}#{version.strip}#{ANSI[:RESET]}#{ANSI[:RESET]}"
+end
+puts "#{ANSI[:WHITE]}~> Loaded:#{ANSI[:RESET]} #{ANSI[:GREEN]}.railsrc#{ANSI[:RESET]}#{ANSI[:RESET]}"
