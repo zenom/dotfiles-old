@@ -169,6 +169,7 @@ def r
   reload!
 end
 
+
 # http://blog.evanweaver.com/articles/2006/12/13/benchmark/
 def benchmark(times = 1000, samples = 20)
   times *= samples
@@ -178,6 +179,22 @@ def benchmark(times = 1000, samples = 20)
   puts " (#{(cur / $last_benchmark * 100).to_i - 100}% change)" rescue puts ""
   $last_benchmark = cur
   result
+end
+
+def copy(str)
+  IO.popen('pbcopy', 'w') { |f| f << str.to_s }
+end
+
+def copy_history
+  history = Readline::HISTORY.entries
+  index = history.rindex("exit") || -1
+  content = history[(index+1)..-2].join("\n")
+  puts content
+  copy content
+end
+
+def paste
+  `pbpaste`
 end
 
 load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)
