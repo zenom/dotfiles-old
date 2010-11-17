@@ -21,19 +21,29 @@ fi
 function commands() {
   echo "Some of the commands"
   echo
-  echo "  hosts               = edit hosts file with vi"
-  echo "  rails-help          = rails help"
-  echo "  git-help            = git help"
-  echo "  latest-chromium     = download latest chromium"
-  echo "  deaths              = kill rails servers"
+  echo "  ==== general ===="
   echo "  dotmate             = open .dotfiles folder in textmate"
   echo "  dotcd               = cd to the .dotfiles directory"
   echo "  home                = cd to ~/"
   echo "  ssh<tab>            = will show all your hosts"
-  echo "  projects            = list all your projects based on .projects file"
-  echo "  reload!             = reload your shell"
+  echo "  reload! / refresh   = reload your shell"
   echo "  myip                = your internet ip"
   echo "  ips                 = ips on this machine"
+  echo "  hosts               = edit hosts file with vi"
+  echo "  pubkey              = copy id_rsa.pub to clipboard"
+  echo "  battery             = check battery life"
+  echo
+  echo "  ==== development ===="
+  echo "  projects            = list all your projects based on .projects file"
+  echo "  rails-help          = rails help"
+  echo "  git-help            = git help"
+  echo "  latest-chromium     = download latest chromium"
+  echo "  deaths              = kill rails servers"
+  echo
+  echo "  ==== databases ===="
+  echo "  mstart/mstop        = Start / Stop MongoDB"
+  echo "  mystart/mystop      = Start / Stop MySQL"
+  echo "  redstart/redstop    = Start / Stop Redis"
   echo
 }
 

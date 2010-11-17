@@ -8,11 +8,19 @@ alias chrome="open -a google\ chrome"
 alias chromium="open -a chromium"
 alias dashcode="open -a dashcode"
 alias f='open -a Finder '
-alias c='cd '
 alias dev='cd /Volumes/Development'
 alias docs='cd ~/Documents'
 alias downloads='cd ~/Downloads'
 alias github="open -a chromium http://www.github.com"
+
+
+# DATABASES
+alias mstart='launchctl load -w ~/Library/LaunchAgents/org.mongodb.mongod.plist'
+alias mstop='launchctl unload -w ~/Library/LaunchAgents/org.mongodb.mongod.plist'
+alias mystart='/usr/local/Cellar/mysql/5.1.51/share/mysql/mysql.server start'
+alias mystop='/usr/local/Cellar/mysql/5.1.51/share/mysql/mysql.server stop'
+alias redstart='launchctl load -w ~/Library/LaunchAgents/io.redis.redis-server.plist'
+alias redstop='launchctl unload -w ~/Library/LaunchAgents/io.redis.redis-server.plist'
 
 if [ -s /usr/bin/firefox ] ; then
   unalias firefox
