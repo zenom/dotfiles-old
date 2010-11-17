@@ -23,6 +23,7 @@ function rails-help() {
   echo "  rc          = rails console"
   echo "  rd          = rails destroy"
   echo "  migrate     = run migration"
+  echo "  spec		  = rspec spec"
   echo "  devlog      = tail -f log/development.log"
   echo "  taild       = tail -f log/development.log"
   echo

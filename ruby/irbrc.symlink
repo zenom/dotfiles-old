@@ -3,7 +3,7 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'fileutils'
-require 'pp'
+require 'ap'
 
 alias q exit
 
