@@ -32,7 +32,6 @@ function commands() {
   echo
 }
 
-
 if [ -z "${PROJECT_PARENT_DIRS[*]}" ]; then
 	echo "Define a PROJECT_PARENT_DIRS array in ~/.projects"
 fi

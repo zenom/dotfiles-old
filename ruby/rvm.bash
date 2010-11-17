@@ -16,3 +16,7 @@ rvm_default () {
 function rvm_version () {
   ruby --version
 }
+
+# setting this for rvm stuff
+ORIG_RUBY=$RUBY_VERSION;
+ORIG_GEMSET=$rvm_gemset_name

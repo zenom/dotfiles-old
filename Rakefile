@@ -31,5 +31,10 @@ task :install do
     end
     `ln -s "$PWD/#{linkable}" "#{target}"`
   end
+  
+  # remove old after_use file
+  FileUtils.rm_rf("#{ENV['HOME']}/.rvm/hooks/after_cd")
+  `ln -s "$PWD/ruby/rvm/hooks/after_cd" "#{ENV['HOME']}/.rvm/hooks/after_cd"`
+  
 end
 task :default => 'install'
