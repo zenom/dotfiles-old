@@ -31,3 +31,15 @@ ulimit -S -c 0
 : ${LC_CTYPE:="en_US.UTF-8"}
 : ${LC_ALL:="en_US.UTF-8"}
 export LANG LANGUAGE LC_CTYPE LC_ALL
+
+
+export TITLEBAR='\[\033]0;\w\007\]'
+
+# Terminal sets TERM_PROGRAM so we can tell it apart from regular VT100
+case "$TERM_PROGRAM" in
+"Apple_Terminal")PS1="$TITLEBAR$PS1"
+esac
+case "$TERM" in
+"xterm")PS1="$TITLEBAR$PS1"
+esac
+# end insert
