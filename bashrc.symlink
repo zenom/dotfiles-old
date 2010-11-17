@@ -1,5 +1,7 @@
-#echo "loading .bashrc"
-#source ~/.profile
+# load up the project directories
+if [ -f ~/.projects ]; then
+  source ~/.projects;
+fi
 
 # shortcut to this dotfiles path is $ZSH
 export BASH=$HOME/.dotfiles
@@ -21,16 +23,18 @@ alias ..='cd ..'
 # Reload .bashrc
 alias refresh='. ~/.bashrc'
 
-# Pipe my public key to my clipboard. Fuck you, pay me.
+# Pipe my public key to my clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
-# source every .zsh file in this rep
+# source every .bash file in this rep
 CONFIG_FILES="$BASH/**/*.bash"
 for config_file in $CONFIG_FILES
 do
   source $config_file
 done
 
+# unset
+unset config_file
 
 # Completion -------------------------------------------------------
 bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
@@ -42,7 +46,3 @@ bind "set bell-style none" # no bell
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
-
-
-# unset
-unset config_file

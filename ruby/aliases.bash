@@ -2,7 +2,6 @@ alias r='rvm use ree-1.8.7-head'
 
 alias rc='rails console'
 alias rs='rails server -p `available_rails_port`'
-#alias rs='rails server'
 alias rg='rails generate'
 alias rd='rails destroy'
 alias ts='rails server thin'
@@ -23,6 +22,7 @@ function rails-help() {
   echo "  ts          = thin server"
   echo "  rc          = rails console"
   echo "  rd          = rails destroy"
+  echo "  migrate     = run migration"
   echo "  devlog      = tail -f log/development.log"
   echo "  taild       = tail -f log/development.log"
   echo

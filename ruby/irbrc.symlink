@@ -5,6 +5,23 @@ require 'irb/ext/save-history'
 require 'fileutils'
 require 'pp'
 
+alias q exit
+
+
+ANSI = {}
+ANSI[:RESET]     = "\e[0m"
+ANSI[:BOLD]      = "\e[1m"
+ANSI[:UNDERLINE] = "\e[4m"
+ANSI[:LGRAY]     = "\e[0;37m"
+ANSI[:GRAY]      = "\e[1;30m"
+ANSI[:RED]       = "\e[31m"
+ANSI[:GREEN]     = "\e[32m"
+ANSI[:YELLOW]    = "\e[33m"
+ANSI[:BLUE]      = "\e[34m"
+ANSI[:MAGENTA]   = "\e[35m"
+ANSI[:CYAN]      = "\e[36m"
+ANSI[:WHITE]     = "\e[37m"
+
 %w[
   rubygems
   ap
@@ -29,6 +46,64 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
 
+
+IRB.conf[:IRB_RC] = proc do |conf|
+  name = "irb: "
+  name = "rails: " if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)
+  leader = " " * name.length
+  conf.prompt_i = "#{name}"
+  conf.prompt_s = leader + '\-" '
+  conf.prompt_c = leader + '\-+ '
+  conf.return_format = ('=' * (name.length - 2)) + "> %s\n"
+end
+
+def extend_console(name, care = true, required = true)
+  if care
+    require name if required
+    yield if block_given?
+    $console_extensions << "#{ANSI[:GREEN]}#{name}#{ANSI[:RESET]}"
+  else
+    $console_extensions << "#{ANSI[:GRAY]}#{name}#{ANSI[:RESET]}"
+  end
+rescue LoadError
+  $console_extensions << "#{ANSI[:RED]}#{name}#{ANSI[:RESET]}"
+end
+$console_extensions = []
+
+# Wirble is a gem that handles coloring the IRB
+# output and history
+extend_console 'wirble' do
+  Wirble.init
+  Wirble.colorize
+end
+
+# Hirb makes tables easy.
+extend_console 'hirb' do
+  Hirb.enable
+  extend Hirb::Console
+end
+
+# awesome_print is prints prettier than pretty_print
+extend_console 'ap' do
+  alias pp ap
+end
+
+
+# When you're using Rails 3 console, show queries in the console
+extend_console 'rails3', defined?(ActiveSupport::Notifications), false do
+  $odd_or_even_queries = false
+  ActiveSupport::Notifications.subscribe('sql.active_record') do |*args|
+    $odd_or_even_queries = !$odd_or_even_queries
+    color = $odd_or_even_queries ? ANSI[:CYAN] : ANSI[:MAGENTA]
+    event = ActiveSupport::Notifications::Event.new(*args)
+    time  = "%.1fms" % event.duration
+    name  = event.payload[:name]
+    sql   = event.payload[:sql].gsub("\n", " ").squeeze(" ")
+    puts "  #{ANSI[:UNDERLINE]}#{color}#{name} (#{time})#{ANSI[:RESET]}  #{sql}"
+  end
+end
+
+
 class Object
   # list methods which aren't in superclass
   def local_methods(obj = self)
@@ -50,10 +125,8 @@ class Object
   end
 end
 
-def me
-  User.find_by_login('holman')
-end
-
 def r
   reload!
 end
+
+load File.dirname(__FILE__) + '/.railsrc' if ($0 == 'irb' && ENV['RAILS_ENV']) || ($0 == 'script/rails' && Rails.env)
