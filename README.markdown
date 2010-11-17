@@ -6,7 +6,7 @@ Just simply run `commands` for a simple list of commands and sub-commands. It do
 not list them all, your best bet is to go through the files themselves.
 
 ## install
-- `git clone git://github.com/zenom/dotfiles.git`
+- `git clone git://github.com/zenom/dotfiles.git .dotfiles`
 - `cd ~/.dotfiles`
 - `rake install`
 
