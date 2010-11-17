@@ -10,13 +10,21 @@ not list them all, your best bet is to go through the files themselves.
 - `cd ~/.dotfiles`
 - `rake install`
 
+## post install
+- Create a `~/.projects` directory and add something like `PROJECT_PARENT_DIRS[0]="$HOME/src"`
+- Copy the `~/.dotfiles/git/gitconfig.sample` to `~/.gitconfig` and modify to fit your details.
+
 The install rake task will symlink the appropriate files in `.dotfiles` to your
 home directory. Everything is configured and tweaked within `~/.dotfiles`,
 though.
 
-The main file you'll want to change right off the bat is `bash/bashrc.symlink`,
+The main file you'll want to change right off the bat is `base/bashrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
+## modify dotfiles
+For easier use you can use the following commands to edit or get to your dotfiles dirs.
+- `dotcd` will change to your .dotfiles directory.
+- `dotmate` will open your .dotfiles directory in TextMate.
 
 ## topical
 
@@ -39,6 +47,8 @@ symlinked without extension into `$HOME` when you run `rake install`.
 I am just getting into configuring my .dotfiles for a better system. Most of the
 stuff in these files were pulled from the following people:
 
-- [Iain](https://github.com/iain/osx_settings)
-- [holman](https://github.com/holman/)
-- [ryanb](https://github.com/ryanb)
+- [Iain Hecker (iain)](https://github.com/iain/)
+- [Zach Holman (holman)](https://github.com/holman/)
+- [Ryan Bates (ryanb)](https://github.com/ryanb)
+- [Bryan Goines (bry4n)](https://github.com/bry4n)
+- [Mislav Marohnić (mislav)](https://github.com/mislav)
