@@ -29,7 +29,8 @@ For easier use you can use the following commands to edit or get to your dotfile
 
 ## commands listing
 This may or may not be up to date, but gives you an idea as to what is here.
-  `Some of the commands
+
+Some of the commands
 
   ==== general ====
   dotmate             = open .dotfiles folder in textmate
@@ -55,7 +56,6 @@ This may or may not be up to date, but gives you an idea as to what is here.
   mstart/mstop        = Start / Stop MongoDB
   mystart/mystop      = Start / Stop MySQL
   redstart/redstop    = Start / Stop Redis
-  `
 
 ## topical
 
