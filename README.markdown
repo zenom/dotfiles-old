@@ -24,11 +24,29 @@ though.
 The main file you'll want to change right off the bat is `base/bashrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
+## projects
+
+The projects file is a listing of directories you use for your projects. For example:
+
+    # set these for auto project aliases
+    PROJECT_PARENT_DIRS[0]='/Volumes/Development/work'
+    PROJECT_PARENT_DIRS[1]='/Volumes/Development/personal'
+    PROJECT_PARENT_DIRS[2]='/Volumes/Development/friends'
+    
+When you type `projects` in the command line it will traverse those directories and print
+a listing of all the top level folders in that directory.  The automatic aliasing will also
+provide a quick `cd` command to the directory. If you have a directory like the following:
+
+    /Volumes/Development/friends/project-name
+    
+From the command line if you simply type `project-name` it will `cd` into that directory.
+
 ## modify dotfiles
 For easier use you can use the following commands to edit or get to your dotfiles dirs.
 
 - `dotcd` will change to your .dotfiles directory.
 - `dotmate` will open your .dotfiles directory in TextMate.
+- `dotmvim` will open your .dotfiles directory in MacVim. (must have [MacVim](https://github.com/b4winckler/macvim) installed)
 
 ## commands listing
 This may or may not be up to date, but gives you an idea as to what is here.
@@ -59,6 +77,52 @@ Some of the commands
     mstart/mstop        = Start / Stop MongoDB
     mystart/mystop      = Start / Stop MySQL
     redstart/redstop    = Start / Stop Redis
+    
+    
+Rails Help
+
+    ==== rails ====
+    r           = rvm use ree-1.8.7-head
+    rg          = rails generate
+    rs          = rails server
+    ts          = thin server
+    rc          = rails console
+    rd          = rails destroy
+    migrate     = run migration
+    spec        = rspec spec
+    devlog      = tail -f log/development.log
+    taild       = tail -f log/development.log
+
+    ==== bundler ====
+    bx          = bundle exec
+    bo          = bundle open
+    bu          = bundle update
+    
+Git Help
+
+    gcl	    = git clone
+    g       = git
+    get 	  = git
+    ga      = git add
+    gall	  = git add .
+    gst/gs  = git status
+    gss	    = git status -s
+    gl      = git pull --rebase --prune
+    gup     = git fetch && git rebase
+    gp      = git push
+    gd      = git diff | mvim -R -
+    gdv     = git diff -w "" | vim -R -
+    gc      = git commit -v
+    gca     = git commit -v -a
+    gb      = git branch
+    gba     = git branch -a
+    gcount  = git shortlog -sn
+    gcp     = git cherry-pick
+    gco     = git checkout
+    glog    = git log
+    gexport = git git archive --format zip --output
+    gdel    = git branch -D
+    gpo     = git push origin
 
 ## vim
 
