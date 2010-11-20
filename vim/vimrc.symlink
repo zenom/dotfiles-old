@@ -82,6 +82,8 @@ set report=0               " tell us about changes
 set nostartofline          " don't jump to the start of line when scrolling
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 set colorcolumn=80
+" Change the column color to a grayish.
+hi ColorColumn guibg=#2d2d2d 
 
 
 " ----------------------------------------------------------------------------
