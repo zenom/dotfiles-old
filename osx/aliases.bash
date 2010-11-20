@@ -28,6 +28,7 @@ fi
 
 # edit or cd into dotfiles dir.
 alias dotmate='mate $BASH'
+alias dotmvim='mvim $BASH'
 alias dotcd='cd $BASH'
 alias home='cd ~/'
 

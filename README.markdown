@@ -27,6 +27,36 @@ For easier use you can use the following commands to edit or get to your dotfile
 - `dotcd` will change to your .dotfiles directory.
 - `dotmate` will open your .dotfiles directory in TextMate.
 
+## commands listing
+This may or may not be up to date, but gives you an idea as to what is here.
+  `Some of the commands
+
+  ==== general ====
+  dotmate             = open .dotfiles folder in textmate
+  dotmvim             = open .dotfiles folder in macvim
+  dotcd               = cd to the .dotfiles directory
+  home                = cd to ~/
+  ssh<tab>            = will show all your hosts
+  reload! / refresh   = reload your shell
+  myip                = your internet ip
+  ips                 = ips on this machine
+  hosts               = edit hosts file with vi
+  pubkey              = copy id_rsa.pub to clipboard
+  battery             = check battery life
+
+  ==== development ====
+  projects            = list all your projects based on .projects file
+  rails-help          = rails help
+  git-help            = git help
+  latest-chromium     = download latest chromium
+  deaths              = kill rails servers
+
+  ==== databases ====
+  mstart/mstop        = Start / Stop MongoDB
+  mystart/mystop      = Start / Stop MySQL
+  redstart/redstop    = Start / Stop Redis
+  `
+
 ## topical
 
 Everything's built around topic areas. If you're adding a new area to your

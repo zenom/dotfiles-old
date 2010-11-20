@@ -24,6 +24,7 @@ function commands() {
   echo
   echo "  ==== general ===="
   echo "  dotmate             = open .dotfiles folder in textmate"
+  echo "  dotmvim             = open .dotfiles folder in macvim"
   echo "  dotcd               = cd to the .dotfiles directory"
   echo "  home                = cd to ~/"
   echo "  ssh<tab>            = will show all your hosts"

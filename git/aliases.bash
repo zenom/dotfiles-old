@@ -30,7 +30,7 @@ case $OSTYPE in
     alias gd='git diff | vim -R -'
     ;;
   darwin*)
-    alias gd='git diff | mate'
+    alias gd='git diff | mvim -R -'
     ;;
   darwin*)
     alias gd='git diff'
@@ -52,7 +52,7 @@ function git-help() {
   echo "  gl      = git pull --rebase --prune"
   echo "  gup     = git fetch && git rebase"
   echo "  gp      = git push"
-  echo "  gd      = git diff | mate"
+  echo "  gd      = git diff | mvim -R -"
   echo "  gdv     = git diff -w \"$@\" | vim -R -"
   echo "  gc      = git commit -v"
   echo "  gca     = git commit -v -a"
