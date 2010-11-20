@@ -1,6 +1,9 @@
 # dotfiles
 These are my dotfiles with very basic config changes for things like rails 3, git,
-homebrew etc.  It also creates project aliases for easier directory navigation. 
+homebrew etc.  It also creates project aliases for easier directory navigation. These
+have only been tested on MacOSX, there are some things that are mac specific like 'mvim'
+and 'mate' commands.  Most other stuff should work on regular unix distros with little
+customization.
 
 Just simply run `commands` for a simple list of commands and sub-commands. It does 
 not list them all, your best bet is to go through the files themselves.
@@ -32,30 +35,30 @@ This may or may not be up to date, but gives you an idea as to what is here.
 
 Some of the commands
 
-  ==== general ====
-  dotmate             = open .dotfiles folder in textmate
-  dotmvim             = open .dotfiles folder in macvim
-  dotcd               = cd to the .dotfiles directory
-  home                = cd to ~/
-  ssh<tab>            = will show all your hosts
-  reload! / refresh   = reload your shell
-  myip                = your internet ip
-  ips                 = ips on this machine
-  hosts               = edit hosts file with vi
-  pubkey              = copy id_rsa.pub to clipboard
-  battery             = check battery life
+    ==== general ====
+    dotmate             = open .dotfiles folder in textmate
+    dotmvim             = open .dotfiles folder in macvim
+    dotcd               = cd to the .dotfiles directory
+    home                = cd to ~/
+    ssh<tab>            = will show all your hosts
+    reload! / refresh   = reload your shell
+    myip                = your internet ip
+    ips                 = ips on this machine
+    hosts               = edit hosts file with vi
+    pubkey              = copy id_rsa.pub to clipboard
+    battery             = check battery life
 
-  ==== development ====
-  projects            = list all your projects based on .projects file
-  rails-help          = rails help
-  git-help            = git help
-  latest-chromium     = download latest chromium
-  deaths              = kill rails servers
+    ==== development ====
+    projects            = list all your projects based on .projects file
+    rails-help          = rails help
+    git-help            = git help
+    latest-chromium     = download latest chromium
+    deaths              = kill rails servers
 
-  ==== databases ====
-  mstart/mstop        = Start / Stop MongoDB
-  mystart/mystop      = Start / Stop MySQL
-  redstart/redstop    = Start / Stop Redis
+    ==== databases ====
+    mstart/mstop        = Start / Stop MongoDB
+    mystart/mystop      = Start / Stop MySQL
+    redstart/redstop    = Start / Stop Redis
 
 ## topical
 
