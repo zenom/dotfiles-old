@@ -60,6 +60,27 @@ Some of the commands
     mystart/mystop      = Start / Stop MySQL
     redstart/redstop    = Start / Stop Redis
 
+## vim
+
+I am in no way a VIM expert, I merely pulled things from different people's
+repos. The major players I utilized code/config settings from are listed at
+the bottom of this README. I have the following plugins installed for vim:
+
+- Command-T : This is similar to cmd-t in TextMate, pulls up files for you to use.
+You can do ctrl-enter, to open file in horizontal, ctrl-v to enter in vertical.
+
+- Fugitive: Tim Pope's plugin for Git.
+
+- Rails.vim: Tim Pope's rails plugin (with some custom leader commands - from Ryan Bates.)
+
+- SnipMate: Plugin similar to TextMate's snippets.  
+
+- NERDTree: File drawer plugin. 
+
+Everything else is pretty basic and was pulled from @holman's repo for .vimrc.  If you
+have tips/tricks I would love to hear them as I am still getting used to VIM myself. I
+believe most of this should work with VIM < 7.3 except maybe the colorcolumn config option.
+
 ## topical
 
 Everything's built around topic areas. If you're adding a new area to your
