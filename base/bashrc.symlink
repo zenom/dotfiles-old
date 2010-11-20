@@ -8,7 +8,7 @@ fi
 export BASH=$HOME/.dotfiles
 
 # Bash customisations to be syncronised between machines.
-export EDITOR="mvim -f"
+export EDITOR='mvim -f -c "au VimLeave * !open -a Terminal"'
 
 # History
 export HISTCONTROL=erasedups	# when adding an item to history, delete itentical commands upstream
