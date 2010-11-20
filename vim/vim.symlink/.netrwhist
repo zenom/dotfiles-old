@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Volumes/Development/27eleven/MMA-Wrapup'
 let g:netrw_dirhist_2='/Volumes/Development/27eleven/MMA-Wrapup/spec'
 let g:netrw_dirhist_3='/Volumes/Development/27eleven/MMA-Wrapup/spec/unit'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/Volumes/Development/27eleven/MMA-Wrapup'
 let g:netrw_dirhist_5='/Volumes/Development/27eleven/MMA-Wrapup/spec'
 let g:netrw_dirhist_6='/Volumes/Development/27eleven/MMA-Wrapup/spec/unit'
 let g:netrw_dirhist_7='/Volumes/Development/27eleven/MMA-Wrapup'
+let g:netrw_dirhist_8='/Volumes/Development/27eleven/MMA-Wrapup/mmawrapup'
