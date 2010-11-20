@@ -15,6 +15,10 @@ set formatoptions+=n       " support for numbered/bullet lists
 "set textwidth=80           " wrap at 80 chars by default
 set virtualedit=block      " allow virtual edit in visual block ..
 
+
+" Used for javascript templates, similar to Ruby's ERB.
+au bufNewFile,bufRead *.html.jst let b:eruby_subtype='html'|set ft=eruby
+
 " ----------------------------------------------------------------------------
 "  Remapping
 " ----------------------------------------------------------------------------
