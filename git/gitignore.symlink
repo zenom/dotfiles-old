@@ -3,5 +3,6 @@
 .tissues
 *~
 *.swp
+*.swo
 vim/.netrwhist
 .netrwhist
