@@ -120,3 +120,24 @@ function! StripWhitespace ()
     exec ':%s/ \+$//gc'
 endfunction
 map ,s :call StripWhitespace ()<CR>
+
+" ---------------------------------------------------------------------------
+" Privatize method for marking ruby methods private
+" http://robots.thoughtbot.com/post/1986730994/keep-your-privates-close
+" ---------------------------------------------------------------------------
+function! Privatize()
+  let priorMethod = PriorMethodDefinition()
+  exec "normal iprivate :" . priorMethod  . "\<Esc>=="
+endfunction
+
+function! PriorMethodDefinition()
+  let lineNumber = search('def', 'bn')
+  let line       = getline(lineNumber)
+  if line == 0
+    echo "No prior method definition found"
+  endif
+  return matchlist(line, 'def \(\w\+\).*')[1]
+endfunction
+
+map <Leader>p :call Privatize()<CR>
+
