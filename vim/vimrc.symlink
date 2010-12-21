@@ -12,6 +12,8 @@ set expandtab              " expand tabs to spaces
 set nosmarttab             " fuck tabs
 set formatoptions+=n       " support for numbered/bullet lists
 set virtualedit=block      " allow virtual edit in visual block ..
+call pathogen#runtime_append_all_bundles()
+
 filetype plugin indent on
 
 function s:setupWrapping()
@@ -25,9 +27,9 @@ function s:setupMarkup()
   map <buffer> <Leader>p :Mm <CR>
 endfunction
 
-
 " Used for javascript templates, similar to Ruby's ERB.
 au bufNewFile,bufRead *.html.jst let b:eruby_subtype='html'|set ft=eruby
+au bufNewFile,bufRead *.jhtml let b:eruby_subtype='html'|set ft=eruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
